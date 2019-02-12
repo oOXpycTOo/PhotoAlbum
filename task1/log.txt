@@ -1,0 +1,11 @@
+commit 64281c3a3d1aa15c22dbe637930988f9ffe71c52
+Author: oOXpycTOo <vladkaz1999@gmail.com>
+Date:   Tue Feb 12 19:34:09 2019 +0300
+
+    added status.txt
+
+commit 323b39bd55d0926ca12d3916e0255284e4a1f4ee
+Author: oOXpycTOo <vladkaz1999@gmail.com>
+Date:   Tue Feb 12 19:28:22 2019 +0300
+
+    added .gitignore
