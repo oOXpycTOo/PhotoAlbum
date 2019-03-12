@@ -3,153 +3,200 @@
         {
             id: '1',
             description: 'New post is there',
-            createdAt: new Date('15.12.2017'),
-            author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            createdAt: new Date('2017-12-15'),
+            author: 'Cheburashkaasfasfasfasfasfasfasfaf',
+            photoLink: "images/1-min.jpg",
+            spanRow: 1,
+            spanCol: 2,
         },
         {
             id: '2',
             description: 'New post is there',
-            createdAt: new Date('15.12.2017'),
+            createdAt: new Date('2017-12-15'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/2-min.jpg",
+            spanRow: 3,
+            spanCol: 2,
         },
         {
             id: '3',
             description: 'New post is there',
-            createdAt: new Date('15.12.2017'),
-            author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            createdAt: new Date('2017-12-15'),
+            author: 'Cheburashka',
+            photoLink: "images/3-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '4',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/4-min.jpg",
+            spanRow: 1,
+            spanCol: 4,
         },
         {
             id: '5',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/5-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '6',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/6-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '7',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '8',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/4-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '9',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/6-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '10',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '11',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '12',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '13',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '14',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1-min.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '15',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '16',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '17',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '18',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '19',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1.jpg",
+            spanRow: 1,
+            spanCol: 1,
         },
         {
             id: '20',
             description: 'New post is there',
             createdAt: new Date('15.12.2017'),
             author: 'Kazimirau Ulad',
-            photoLink: "images/1.jpg"
+            photoLink: "images/1.jpg",
+            spanRow: 1,
+            spanCol: 1,
         }
     ];
 
     function getPhotoPosts(skip=0, top=10, filterConfig={}) {
-        if(isEmpty(filterConfig)) {
+        if(filterConfig == 0) {
             var filteredPosts = photoPosts;
         } else {
             var filteredPosts = photoPosts.filter(post => {
                 var isValidPost = true;
                 for (var key in filterConfig) {
-                    isValidPost = isValidPost && (post.key == filterConfig.key);
+                    if (Object.prototype.toString.call(filterConfig[key]) === '[object Date]') {
+                        isValidPost = post[key].getTime() === filterConfig[key].getTime();
+                    } else {
+                        isValidPost = post[key] == filterConfig[key];
+                    }
+                    if(!isValidPost) {
+                        return false;
+                    }
                 }
                 return isValidPost;
             });
@@ -217,5 +264,70 @@
             }
         }
         return false;
+    }
+
+    function displayModal(id) {
+        const photoPost = getPhotoPost(id);
+        var postModalDom = document.querySelector('.modal-overlay');
+        document.querySelector('body').classList.toggle('no-scroll');
+        postModalDom.classList.toggle('active');
+        postModalDom.innerHTML = 
+        '<div class="post-modal">\
+            <div class="hidden-scroll">\
+                <div class="photo-zone">\
+                    <img src="' + photoPost.photoLink + '" />\
+                    <div class="text">\
+                        <div class="user-info">\
+                            <span><img src="' + photoPost.photoLink + '" class="user-photo"></span>\
+                            <div class="photo-info">\
+                                <span>' + photoPost.author + '</span>\
+                                <span>' + photoPost.createdAt.toLocaleDateString() + '</span>\
+                            </div>\
+                        </div>\
+                        <hr/>\
+                        <div class="hashtags">\
+                            <a class="hashtag">city</a>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="hidden-scroll">\
+                <div class="text-zone">\
+                    \
+                    <div class="description">\
+                        '+ photoPost.description +'\
+                    </div>\
+                </div>\
+            </div>\
+        </div>';
+    }
+
+    function displayPhotoPosts() {
+        var mainDom = document.querySelector('main');
+        var postsToShow = getPhotoPosts(0, 10);
+        postsToShow.forEach(post=>{
+            mainDom.innerHTML +=
+            '<div class="post shadow span-col' + post.spanCol + 
+                                   ' span-row' + post.spanRow +'" id="' + post.id + '">\
+                <img src="' + post.photoLink + '" />\
+                    <div class="post-overlay">\
+                        <div class="description">\
+                            <h3>Posted by: ' + post.author + '</h3>\
+                            <p>on ' + post.createdAt.toLocaleDateString() + '</p>\
+                        </div>\
+                    </div>\
+            </div>';
+        });
+    }
+
+    window.onload = function() {
+        displayPhotoPosts();
+
+        var postClass = document.getElementsByClassName("post-overlay");
+        for (var i = 0; i < postClass.length; ++i) {
+            postClass[i].addEventListener('click', function () {
+                displayModal(this.parentNode.id);
+            });
+        }
     }
 }());
