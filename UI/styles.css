@@ -44,11 +44,23 @@ body.no-scroll {
     display: block;
 }
 
+.close {
+    color: rgba(223, 223, 223, 0.7);
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: calc(var(--headerHeight));
+    cursor: pointer;
+}
+
+.close:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
 .post-modal {
     width: 80%;
     height: 90%;
-    top: 5%;
-    bottom: 5%;
+    top: 10%;
     left: 10%;
     right: 10%;
     position: fixed;
@@ -77,6 +89,7 @@ body.no-scroll {
 }
 
 .photo-zone .text {
+    box-sizing: border-box;
     margin: 20px 20px;
 }
 
@@ -90,7 +103,7 @@ body.no-scroll {
 }
 
 .text-zone > * {
-    margin-bottom: 20px;
+    margin: 20px 20px;
 }
 
 .user-info {
@@ -154,6 +167,15 @@ button:focus {
 
 .round {
     border-radius: 50%;
+}
+
+button.like {
+    font-size: calc(var(--headerHeight) / 2);
+    color: rgba(0, 0, 0, 0.3);
+}
+
+button.like:hover .fa-heart {
+    color: rgba(211, 9, 9, 0.7);
 }
 
 .user-photo {   
@@ -260,7 +282,6 @@ footer {
     position: relative;
     width: 100%;
     height: var(--headerHeight);
-    margin-top: calc(calc(-1 * var(--headerHeight)) + 10px);
     bottom: 0;
     left: 0;
     right: 0;
@@ -430,6 +451,13 @@ footer:hover .show-more-btn span.left{
         max-width: calc(var(--rowHeight) / 1.05);
         margin: auto auto;
     }
+}
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .light-blue{
