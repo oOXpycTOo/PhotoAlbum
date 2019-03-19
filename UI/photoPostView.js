@@ -8,7 +8,7 @@ class PhotoPostView {
         let postsToShow = this.photoPostModel.getPage(from, to);
         postsToShow.forEach(photoPost => {
             this.mainDom.innerHTML +=
-                '<div class="post shadow span-col' + photoPost.spanCol +
+            '<div class="post shadow span-col' + photoPost.spanCol +
                 ' span-row' + photoPost.spanRow + '" id="' + photoPost.id + '">\
                 <img src="' + photoPost.photoLink + '" />\
                     <div class="post-overlay">\
@@ -45,8 +45,7 @@ class PhotoPostView {
                         </div>\
                         <hr/>\
                         <div class="hashtags">\
-                            <a class="hashtag">city</a>\
-                            <a class="hashtag">nature</a>\
+                            ' + this._getHashtags(photoPost.hashtags) + '\
                         </div>\
                     </div>\
                 </div>\
@@ -64,6 +63,14 @@ class PhotoPostView {
             document.querySelector('body').classList.toggle("no-scroll");
             document.querySelector('.modal-overlay').classList.toggle('active');
         });
+    }
+
+    _getHashtags(hashtags) {
+        let hashtagHTML = '';
+        hashtags.forEach(hashtag=>{
+            hashtagHTML += '<a class="hashtag">' + hashtag + '</a>';
+        });
+        return hashtagHTML;
     }
 
     _dateToString(date) {

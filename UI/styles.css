@@ -3,15 +3,15 @@
     --wrapper-h: 100vh;
     --gap: 3px;
     --margins: 30px;
-    --noOfColumns: 5;
+    --noOfColumns: 3;
 
     --noOfGaps: calc(var(--noOfColumns) - 1);
     --rowHeight: calc((var(--wrapper-w) - (2 * var(--margins)) - (var(--noOfGaps) * var(--gap))) / var(--noOfColumns));
 
-    --headerHeight: calc(var(--wrapper-h) / 10);
+    --headerHeight: 64px;
     --main-font-size: calc(var(--headerHeight) / 4);
 
-    --menuButtonDiameter: calc(var(--wrapper-h) / 9);
+    --menuButtonDiameter: 64px;
     --subMenuButtonDiameter: calc(2 * var(--menuButtonDiameter) / 3);
     --sticksWidth: calc(var(--menuButtonDiameter) / 2.43);
     --sticksHeight: calc(var(--menuButtonDiameter) * 0.04);
@@ -47,7 +47,6 @@ body.no-scroll {
 .close {
     color: rgba(223, 223, 223, 0.7);
     position: fixed;
-    top: 5%;
     right: 5%;
     font-size: calc(var(--headerHeight));
     cursor: pointer;
@@ -60,7 +59,8 @@ body.no-scroll {
 .post-modal {
     width: 80%;
     height: 90%;
-    top: 10%;
+    top: 5%;
+    bottom: 5%;
     left: 10%;
     right: 10%;
     position: fixed;
@@ -147,6 +147,58 @@ header img.user-photo {
     content: url("icons/ulad.png");
 }
 
+.post {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s ease;
+    overflow: hidden;
+}
+
+.post img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.post-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    transition: background-color .15s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #03a8f400;
+    color: rgba(255, 255, 255, 0);
+}
+
+.post-overlay .description {
+    max-width: 80%;
+    text-align: center;
+}
+
+.post-overlay:hover {
+    background: #03a8f4b9;
+    color: #fff;
+}
+
+.post-overlay:hover .description *{
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto auto;
+}
+
 button {
     border: none;
     cursor: pointer;
@@ -201,7 +253,7 @@ button.like:hover .fa-heart {
     position: absolute;
     top: 50%; margin-top: calc(-1 * calc(var(--sticksHeight) / 2));
     left: 50%; margin-left: calc(-1 * calc(var(--sticksWidth) / 2));
-    background-color: #03a9f4;
+    background-color: #fff;
 }
 
 .menu-btn span::before,
@@ -336,7 +388,8 @@ footer:hover .show-more-btn span.left{
 
 @media screen and (max-width: 600px) {
     :root {
-        --menuButtonDiameter: calc(var(--wrapper-h) / 10);
+        --headerHeight: 56px;
+        --menuButtonDiameter: 56px;
         --subMenuButtonDiameter: calc(2 * var(--menuButtonDiameter) / 3);
         --sticksWidth: calc(var(--menuButtonDiameter) / 2.43);
         --sticksHeight: calc(var(--menuButtonDiameter) * 0.04);
@@ -353,14 +406,16 @@ footer:hover .show-more-btn span.left{
         grid-row-gap: 10px;
     }
 
-    .post img {
+    .post-modal {
         display: block;
-        width: 100%;
-        height: 100%;
+        overflow-y: scroll;
+        bottom: 0;
+        top: 10%;
     }
 
-    .post-overlay {
-        display: none;
+    .post-modal > div {
+        width: 100%;
+        margin-right: 15px;
     }
 }
 
@@ -373,22 +428,6 @@ footer:hover .show-more-btn span.left{
         grid-auto-rows: var(--rowHeight);
         grid-gap: var(--gap);
         margin: calc(var(--headerHeight) + 10px) var(--margins);
-    }
-
-    .post {
-        position: relative;
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        transition: .5s ease;
-        overflow: hidden;
-    }
-
-    .post img {
-        display: block;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
     }
 
     .post.span-col1 {
@@ -414,43 +453,19 @@ footer:hover .show-more-btn span.left{
     .post.span-row3 {
         grid-row-end: span 3;
     }
+}
 
-    .post-overlay {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        bottom:0;
-        left: 0;
-        right: 0;
-        transition: background-color .15s ease-in-out;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #03a8f400;
-        color: rgba(255, 255, 255, 0);
-    }
+@media screen and (min-width: 1024px) {
+ :root {
+    --wrapper-w: 100vw;
+    --wrapper-h: 100vh;
+    --gap: 3px;
+    --margins: 30px;
+    --noOfColumns: 5;
 
-    .post-overlay .description {
-        max-width: 80%;
-        text-align: center;
-    }
-
-    .post-overlay:hover {
-        background: #03a8f4b9;
-        color: #fff;
-    }
-
-    .post-overlay:hover .description *{
-        background: rgba(0,0,0,0.5);
-        padding: 10px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: calc(var(--rowHeight) / 1.05);
-        margin: auto auto;
-    }
+    --noOfGaps: calc(var(--noOfColumns) - 1);
+    --rowHeight: calc((var(--wrapper-w) - (2 * var(--margins)) - (var(--noOfGaps) * var(--gap))) / var(--noOfColumns));
+ }   
 }
 
 .horizontal-container {
@@ -468,7 +483,6 @@ footer:hover .show-more-btn span.left{
 .white {
     background-color: #fff;
     color: #03a9f4;
-    border: 1px solid rgba(0,0,0,0.12);
 }
 
 .text-light-blue{
@@ -491,11 +505,15 @@ footer:hover .show-more-btn span.left{
 a.hashtag {
     font-size: calc(var(--main-font-size)/1.3);
     height: auto;
-    padding: 3px 5px;
+    padding: calc(var(--main-font-size)*0.4) calc(var(--main-font-size)*0.5);
     color: #fff;
     background: #03a9f4;
     border-radius: calc(var(--main-font-size)/2.6);
     box-sizing: border-box;
     text-decoration: none;
     cursor: pointer;
+}
+
+.hashtags :not(:first-child):not(:last-child) {
+    margin: 0 calc(var(--main-font-size)/2);
 }
