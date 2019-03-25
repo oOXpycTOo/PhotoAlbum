@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Imagine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +15,35 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 </head>
 <body>
+    <template id="modal-window">
+        <div class="modal-window">
+            
+        </div>
+    </template>
+    <template id="display-photopost">
+
+    </template>
+    <template id="add-photopost">
+        <div class="add-photopost-layout">
+            <div class="hidden-scroll">
+                <div class="photo-zone">
+                    <button class="add-photo">
+                        
+                    </button>
+                </div>
+            </div>
+            <div class="hidden-scroll">
+                <div class="text-zone">
+                    <div class="description">
+                    </div><hr/>
+                    <div class="hashtags">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
     <div class="modal-overlay">
+        <div class="close">&times</div>
     </div>
     <header class="light-blue shadow">
         <img class="logo"/>
@@ -28,13 +57,13 @@
             <span></span>
         </button>
         <nav class="menu">
-            <button class="light-blue">
+            <button class="light-blue add-photopost">
                 <i class="fas fa-plus"></i>
             </button>
-            <button class="light-blue">
+            <button class="light-blue filter-photoposts">
                 <i class="fas fa-sliders-h"></i>
             </button>
-            <button class="light-blue">
+            <button class="light-blue enter-editing-mode">
                 <i class="fas fa-exchange-alt"></i>
             </button>
         </nav>
@@ -51,10 +80,10 @@
         </button>
     </footer>
     <script src="script.js"></script>
-    <script src="photoPost.js"></script>
-    <script src="photoPostModel.js"></script>
-    <script src="photoPostView.js"></script>
-    <script src="photoPostController.js"></script>
-    <script src="app.js"></script>
+    <script src="PhotoPost.js"></script>
+    <script src="PhotoPostsModel.js"></script>
+    <script src="PhotoPostsView.js"></script>
+    <script src="PhotoPostsController.js"></script>
+    <script src="App.js"></script>
 </body>
 </html>

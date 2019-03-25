@@ -55,8 +55,8 @@
             ['dry', 'desert', 'natureisbeautiful'],
             ['Ulad', 'Ann', 'Donuld'])
     ];
-
-    let photoPostModel = new PhotoPostModel(photoPosts);
-    let photoPostView = new PhotoPostView(photoPostModel);
-    let photoPostController = new PhotoPostController(photoPostModel, photoPostView);
+    // TODO dataservice.js
+    let photoPostModel = new PhotoPostsModel(photoPosts);
+    let photoPostView = new PhotoPostsView(photoPostModel);
+    let photoPostController = new PhotoPostsController(photoPostModel, photoPostView);
 }());

@@ -1,34 +1,44 @@
-class PhotoPostView {
-    constructor(photoPostModel) {
-        this.photoPostModel = photoPostModel;
-        this.mainDom = document.querySelector('main');
+class PhotoPostsView {
+    constructor(photoPostsModel) {
+        this.photoPostsModel = photoPostsModel;
+        this._init();
     }
 
-    displayPage(from=0, to=10) {
-        let postsToShow = this.photoPostModel.getPage(from, to);
+   _init() {
+       this._createChildren()
+           .displayPage();
+   } 
+
+   _createChildren() {
+       this.mainContainer = document.querySelector('main');
+       this.body = document.querySelector('body');
+       this.modal = document.querySelector('.modal-overlay');
+       return this;
+   }
+
+    displayPage(from=0, to=10, filter={}) {
+        let postsToShow = this.photoPostsModel.getPage(from, to, filter);
         postsToShow.forEach(photoPost => {
-            this.mainDom.innerHTML +=
+            this.mainContainer.innerHTML +=
             '<div class="post shadow span-col' + photoPost.spanCol +
                 ' span-row' + photoPost.spanRow + '" id="' + photoPost.id + '">\
                 <img src="' + photoPost.photoLink + '" />\
                     <div class="post-overlay">\
                         <div class="description">\
                             <h3>Posted by: ' + photoPost.author + '</h3>\
-                            <p>on ' + this._dateToString(photoPost.createdAt) + '</p>\
+                            <p>on ' + photoPost.creationDate + '</p>\
                         </div>\
                     </div>\
             </div>';
         });
     }
 
-    displayModal(id) {
-        const photoPost = this.photoPostModel.get(id);
-        let modalDom = document.querySelector('.modal-overlay');
-        document.querySelector('body').classList.toggle('no-scroll');
-        modalDom.classList.toggle('active');
-        modalDom.innerHTML =
-        '<div class="close">&times</div>\
-        <div class="post-modal">\
+    displayPhotoPost(id) {
+        const photoPost = this.photoPostsModel.get(id);
+        this._displayModal();
+        let modalWindow = document.querySelector('.modal-window');
+        modalWindow.innerHTML +=
+        '<div class="post-layout">\
             <div class="hidden-scroll">\
                 <div class="photo-zone">\
                     <img src="' + photoPost.photoLink + '" />\
@@ -38,14 +48,14 @@ class PhotoPostView {
                                 <span><img src="' + photoPost.photoLink + '" class="user-photo"></span>\
                                 <div class="photo-info">\
                                     <span>' + photoPost.author + '</span>\
-                                    <span>' + this._dateToString(photoPost.createdAt) + '</span>\
+                                    <span>' + photoPost.creationDate + '</span>\
                                 </div>\
                             </div>\
                             <button class="like"><i class="fas fa-heart"></i></button>\
                         </div>\
                         <hr/>\
                         <div class="hashtags">\
-                            ' + this._getHashtags(photoPost.hashtags) + '\
+                            ' + this._getHashtagsHTML(photoPost.hashtags) + '\
                         </div>\
                     </div>\
                 </div>\
@@ -59,13 +69,23 @@ class PhotoPostView {
                 </div>\
             </div>\
         </div>';
-        document.querySelector('.close').addEventListener('click', function () {
-            document.querySelector('body').classList.toggle("no-scroll");
-            document.querySelector('.modal-overlay').classList.toggle('active');
-        });
     }
 
-    _getHashtags(hashtags) {
+    addPhotoPost() {
+       this._displayModal();
+       let modalWindow = document.querySelector('.modal-window');
+       let addPhotoPostLayout = document.getElementById('add-photopost');
+       modalWindow.appendChild(addPhotoPostLayout.content.cloneNode(true));
+    }
+
+    _displayModal() {
+        let modalWindow = document.getElementById('modal-window');
+        this.body.classList.toggle('no-scroll');
+        this.modal.classList.add('active');
+        this.modal.appendChild(modalWindow.content.cloneNode(true));
+    }
+
+    _getHashtagsHTML(hashtags) {
         let hashtagHTML = '';
         hashtags.forEach(hashtag=>{
             hashtagHTML += '<a class="hashtag">' + hashtag + '</a>';
@@ -73,21 +93,4 @@ class PhotoPostView {
         return hashtagHTML;
     }
 
-    _dateToString(date) {
-        const intToMonth = {
-            0: 'Jan',
-            1: 'Feb',
-            2: 'Mar',
-            3: 'Apr',
-            4: 'May',
-            5: 'Jun',
-            6: 'Jul',
-            7: 'Aug',
-            8: 'Sep',
-            9: 'Oct',
-            10: 'Nov',
-            11: 'Dec'
-        };
-        return intToMonth[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
-    }
 }

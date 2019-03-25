@@ -17,6 +17,14 @@
     --sticksHeight: calc(var(--menuButtonDiameter) * 0.04);
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 body {
     font-family: 'Rubik', sans-serif;
     min-width: 300px;
@@ -56,6 +64,25 @@ body.no-scroll {
     color: rgba(255, 255, 255, 0.9);
 }
 
+.modal-window {
+    width: 80%;
+    height: 90%;
+    top: 5%;
+    bottom: 5%;
+    left: 10%;
+    right: 10%;
+    position: fixed;
+    background-color: #fff;
+    z-index: 13;
+}
+
+.post-layout {
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
 .post-modal {
     width: 80%;
     height: 90%;
@@ -66,8 +93,6 @@ body.no-scroll {
     position: fixed;
     background-color: #fff;
     z-index: 13;    
-    display: flex;
-    justify-content: flex-start;
 }
 
 .hidden-scroll {
@@ -406,16 +431,26 @@ footer:hover .show-more-btn span.left{
         grid-row-gap: 10px;
     }
 
-    .post-modal {
-        display: block;
-        overflow-y: scroll;
-        bottom: 0;
+    .modal-window {
         top: 10%;
+        bottom: 0;
+        left: 0;
+        width: 100%;
     }
 
-    .post-modal > div {
+    .post-layout {
         width: 100%;
-        margin-right: 15px;
+        display: block;
+        overflow-y: scroll;
+    }
+
+    .post-layout > div {
+        width: 100%;
+    }
+
+    .text-zone, .photo-zone {
+        overflow: unset;
+        width: 100%;
     }
 }
 

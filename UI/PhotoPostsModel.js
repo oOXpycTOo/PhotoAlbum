@@ -1,7 +1,8 @@
-class PhotoPostModel {
+class PhotoPostsModel {
     constructor(photoPosts) {
         this.photoPosts = photoPosts;
     }
+
     getPage(skip = 0, top = 10, filters = {}) {
         let filteredPosts = this._filterPosts(filters);
         filteredPosts.sort((a, b) => {
@@ -58,7 +59,7 @@ class PhotoPostModel {
 
     add(photoPost) {
         if (this.validate(photoPost)) {
-            photoPost.unshift(photoPost);
+            photoPosts.unshift(photoPost);
             return true;
         }
         return false;
@@ -82,7 +83,7 @@ class PhotoPostModel {
             if(photoPostToEdit !== undefined) {
                 for (let key in photoPost) {
                     if (photoPostToEdit.hasOwnProperty(key) &&
-                        this._isMutablePropery(key)) {
+                        this._isMutableProperty(key)) {
                         photoPostToEdit[key] = photoPost[key];
                     }
                 }
@@ -93,7 +94,7 @@ class PhotoPostModel {
         return false;
     }
 
-    _isMutablePropery(property) {
+    _isMutableProperty(property) {
         return property !== 'id' && property !== 'author' && property !== 'createdAt';
     }
 }
