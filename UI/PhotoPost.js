@@ -71,4 +71,5 @@ class PhotoPost {
     get getLikedBy() {
         return this.likedBy;
     }
+    
 }

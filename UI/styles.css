@@ -58,6 +58,7 @@ body.no-scroll {
     right: 5%;
     font-size: calc(var(--headerHeight));
     cursor: pointer;
+    transform: translateX(50%);
 }
 
 .close:hover {
@@ -107,6 +108,36 @@ body.no-scroll {
     object-fit: contain;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.drop-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+    border: 7px #c5c5c5 dashed;   
+}
+
+#fileExplorer {
+    display: none;
+}
+
+.file-upload-button {
+    background: #c5c5c5;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10 auto;
+}
+
+.file-upload-button:hover {
+    background: #03a9f4;
+    color: #fff;
+}
+
+.drop-zone.highlighted {
+    border-color: #03a9f4;
 }
 
 .photo-zone > img {

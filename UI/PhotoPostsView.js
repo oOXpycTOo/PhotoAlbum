@@ -71,13 +71,6 @@ class PhotoPostsView {
         </div>';
     }
 
-    addPhotoPost() {
-       this._displayModal();
-       let modalWindow = document.querySelector('.modal-window');
-       let addPhotoPostLayout = document.getElementById('add-photopost');
-       modalWindow.appendChild(addPhotoPostLayout.content.cloneNode(true));
-    }
-
     _displayModal() {
         let modalWindow = document.getElementById('modal-window');
         this.body.classList.toggle('no-scroll');

@@ -24,19 +24,25 @@
 
     </template>
     <template id="add-photopost">
-        <div class="add-photopost-layout">
+        <div class="post-layout">
             <div class="hidden-scroll">
                 <div class="photo-zone">
-                    <button class="add-photo">
-                        
-                    </button>
+                    <div class="drop-zone">
+                        <form class="dragndrop">
+                            <p>Please, load the image or just drag it here:</p>
+                            <input type="file" id="fileExplorer" accept="image/*">
+                            <label class="file-upload-button" for="fileExplorer">Press to load</label>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="hidden-scroll">
                 <div class="text-zone">
                     <div class="description">
-                    </div><hr/>
+                        <input type="text">
+                    </div>
                     <div class="hashtags">
+                        <input type="text">
                     </div>
                 </div>
             </div>
@@ -81,6 +87,9 @@
     </footer>
     <script src="script.js"></script>
     <script src="PhotoPost.js"></script>
+    <script src="AddPhotoModel.js"></script>
+    <script src="AddPhotoView.js"></script>
+    <script src="AddPhotoController.js"></script>
     <script src="PhotoPostsModel.js"></script>
     <script src="PhotoPostsView.js"></script>
     <script src="PhotoPostsController.js"></script>

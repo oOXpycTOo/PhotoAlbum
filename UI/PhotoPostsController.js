@@ -27,9 +27,6 @@ class PhotoPostsController {
                 this.displayPhotoPost(this.photoPosts[i].parentElement.id);
             });
         }
-        this.addPhotoPostButton.addEventListener('click', () => {
-           this.addPhotoPost(); 
-        }); 
         this.editModeButton.onclick = this.enterEditMode;
         this.filterButton.onclick = this.displayFilterWindow;
         document.querySelector('.close').addEventListener('click', ()=>{
@@ -41,10 +38,6 @@ class PhotoPostsController {
 
     displayPhotoPost(id) {
         this.photoPostsView.displayPhotoPost(id);
-    }
-
-    addPhotoPost() {
-        this.photoPostsView.addPhotoPost();
     }
 
     enterEditMode() {
