@@ -1,6 +1,6 @@
 (function() {
-    // TODO dataservice.js
-    let photoPosts = []
+    let photoPosts = [];
+    let currentUser = new User();
     if(localStorage.getItem('photoPosts') === null) {
         photoPosts = [
             new PhotoPost(
@@ -61,10 +61,24 @@
         localStorage.setItem('photoPosts', JSON.stringify(photoPosts));
     } else {
         photoPosts = JSON.parse(localStorage.getItem('photoPosts'));
-        photoPosts.forEach(photoPost => {
-            photoPost.__proto__ = PhotoPost.prototype;
-            photoPost.createdAt = new Date(photoPost.createdAt);
+        photoPosts = photoPosts.map(photoPost => {
+            return new PhotoPost(
+                photoPost.id,
+                photoPost.description, 
+                photoPost.createdAt, 
+                photoPost.author,
+                photoPost.photoLink,
+                photoPost.spanRow,
+                photoPost.spanCol,
+                photoPost.hashtags,
+                photoPost.likedBy
+                );
         });
+    }
+    if(localStorage.getItem('isLogged') === null) {
+        localStorage.setItem('isLogged', false);
+    } else {
+        isUserLoggedIn = localStorage.getItem('isLogged');
     }
     let photoPostModel = new PhotoPostsModel(photoPosts);
     let photoPostView = new PhotoPostsView(photoPostModel);

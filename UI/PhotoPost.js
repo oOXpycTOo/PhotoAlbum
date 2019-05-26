@@ -28,7 +28,7 @@ class PhotoPost {
         return this.description;
     }
 
-    get creationDate() {
+    static formatDate(date) {
         const intToMonth = {
             0: 'Jan',
             1: 'Feb',
@@ -43,9 +43,13 @@ class PhotoPost {
             10: 'Nov',
             11: 'Dec'
         };
-        return intToMonth[this.createdAt.getMonth()] + ' ' + 
-                          this.createdAt.getDate() + ', ' + 
-                          this.createdAt.getFullYear();
+        return intToMonth[date.getMonth()] + ' ' +
+            date.getDate() + ', ' +
+            date.getFullYear();
+    }
+
+    get creationDate() {
+        return PhotoPost.formatDate(this.createdAt);
     }
 
     get getAuthor() {
@@ -70,6 +74,20 @@ class PhotoPost {
 
     get getLikedBy() {
         return this.likedBy;
+    }
+
+    isLikedBy(user) {
+        return this.likedBy.includes(user);
+    }
+
+    get likedByAmount() {
+        if(this.likedBy.length > 1000) {
+            return this.likedBy.length % 1000 + 'K';
+        } else if(this.likedBy.length > 1000000) {
+            return this.likedBy.length % 1000000 + 'M';
+        } else {
+            return this.likedBy.length;
+        }
     }
     
 }

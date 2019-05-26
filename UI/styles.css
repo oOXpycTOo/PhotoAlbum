@@ -75,6 +75,20 @@ body.no-scroll {
     position: fixed;
     background-color: #fff;
     z-index: 13;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatebottom;
+    animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatebottom {
+    from {top:100%;}
+    to {top:5%;}
+}
+
+@keyframes animatebottom {
+    from {top:100%;}
+    to {top:5%;}
 }
 
 .post-layout {
@@ -110,13 +124,27 @@ body.no-scroll {
     overflow-x: hidden;
 }
 
-.drop-zone {
+.drop-area {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    width: 100%;
     box-sizing: border-box;
-    border: 7px #c5c5c5 dashed;   
+
+}
+
+#photo-input {
+    display: none;
+}
+
+.add-photo-btn {
+    fill: #d3d3d3;
+    transition: fill 0.3s;
+}
+
+.add-photo-btn:hover {
+    fill: #03a9f4;
 }
 
 #fileExplorer {
@@ -134,10 +162,6 @@ body.no-scroll {
 .file-upload-button:hover {
     background: #03a9f4;
     color: #fff;
-}
-
-.drop-zone.highlighted {
-    border-color: #03a9f4;
 }
 
 .photo-zone > img {
@@ -187,20 +211,47 @@ header {
     padding: 0px 5vw;
 }
 
-header img {
-    height: calc(var(--headerHeight) / 2);
+.dropdown-btn {
+    box-sizing: border-box;
+    padding: 0 10px; 
+    width: 140px;
 }
 
-header img.logo {
+.dropdown:hover .dropdown-btn {
+    background-color: #035a83;
+}
+
+.dropdown-content {
+    display: none;
+    width: 140px;
+    position: absolute;
+    background-color: #03a9f4;
+    z-index: 2;
+}
+
+.dropdown-content a {
+    display: block;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #035a83;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+img.logo {
+    height: calc(var(--headerHeight) / 2);
     content: url("icons/logo.svg");
 }
 
-header button.user {
+button.user {
     color: #fff;
-}
-
-header img.user-photo {
-    content: url("icons/ulad.png");
 }
 
 .post {
@@ -262,11 +313,8 @@ button {
     font-size: var(--main-font-size);
     height: var(--headerHeight);
     background: none;
-}
-
-button span{
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
 }
 
 button:focus {
@@ -277,12 +325,21 @@ button:focus {
     border-radius: 50%;
 }
 
-button.like {
+.like-btn {
     font-size: calc(var(--headerHeight) / 2);
     color: rgba(0, 0, 0, 0.3);
+    transition: color 0.4s;
 }
 
-button.like:hover .fa-heart {
+.like-btn * {
+    margin-right: 5px;
+}
+
+.like-btn.active {
+    color: rgba(211, 9, 9, 0.7);
+}
+
+.like-btn:hover {
     color: rgba(211, 9, 9, 0.7);
 }
 
@@ -291,6 +348,10 @@ button.like:hover .fa-heart {
     width: calc(var(--headerHeight) / 2);
     height: calc(var(--headerHeight) / 2);
     margin-left: 10px;
+}
+
+main {
+    margin: 10px;
 }
 
 .menu-btn {
@@ -442,7 +503,7 @@ footer:hover .show-more-btn span.left{
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     :root {
         --headerHeight: 56px;
         --menuButtonDiameter: 56px;
@@ -456,17 +517,27 @@ footer:hover .show-more-btn span.left{
     }
 
     main {
-        margin: calc(var(--headerHeight) + 10px) 10px;
         display: grid;
         grid-template-columns: 1fr;
         grid-row-gap: 10px;
     }
 
     .modal-window {
+        position: relative;
         top: 10%;
         bottom: 0;
         left: 0;
         width: 100%;
+    }
+
+    @-webkit-keyframes animatebottom {
+        from {top:100%;}
+        to {top:10%;}
+    }
+
+    @keyframes animatebottom {
+        from {top:100%;}
+        to {top:10%;}
     }
 
     .post-layout {
@@ -485,7 +556,7 @@ footer:hover .show-more-btn span.left{
     }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     main {
         max-width: var(--wrapper-w);
         display: grid;
@@ -493,7 +564,6 @@ footer:hover .show-more-btn span.left{
         grid-auto-flow: dense;
         grid-auto-rows: var(--rowHeight);
         grid-gap: var(--gap);
-        margin: calc(var(--headerHeight) + 10px) var(--margins);
     }
 
     .post.span-col1 {

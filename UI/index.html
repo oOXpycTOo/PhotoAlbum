@@ -24,39 +24,88 @@
 
     </template>
     <template id="add-photopost">
+        <div class="drop-area">
+            <form class="add-photo-form">
+                <input type="file" id="photo-input" accept="image/*">
+            </form>
+            <button class="add-photo-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" 
+                viewBox="0 0 148.60176 118.7359" 
+                height="200px" style="transform: translateY(-40%);">
+                    <g transform="translate(-31.543883,-102.06139)" id="add-photo-icon">
+                        <path id="rect129"
+                            d="M 73.23798,102.06139 52.663525,119.76935 H 41.543791 c -5.539999,0 -9.999906,4.45991 -9.999908,9.99991 v 81.02761 c 0,5.54 4.459909,10.00042 9.999908,10.00042 H 170.14574 c 5.54001,0 9.99991,-4.46042 9.99991,-10.00042 v -81.02761 c 0,-5.54 -4.4599,-9.99991 -9.99991,-9.99991 h -11.11973 l -20.57445,-17.70796 h -32.6068 z m 32.60678,37.48556 a 30.735995,30.735995 0 0 1 3.06855,0.154 30.735995,30.735995 0 0 1 3.03754,0.45889 30.735995,30.735995 0 0 1 2.97708,0.76016 30.735995,30.735995 0 0 1 2.88613,1.05368 30.735995,30.735995 0 0 1 2.76624,1.33635 30.735995,30.735995 0 0 1 2.61947,1.60559 30.735995,30.735995 0 0 1 2.44585,1.85932 30.735995,30.735995 0 0 1 2.24793,2.09444 30.735995,30.735995 0 0 1 2.02726,2.30787 30.735995,30.735995 0 0 1 1.78749,2.49908 30.735995,30.735995 0 0 1 1.52859,2.66495 30.735995,30.735995 0 0 1 1.2547,2.80448 30.735995,30.735995 0 0 1 0.96893,2.91558 30.735995,30.735995 0 0 1 0.67283,2.99775 30.735995,30.735995 0 0 1 0.37052,3.04994 30.735995,30.735995 0 0 1 0.077,2.17403 30.735995,30.735995 0 0 1 -0.15348,3.06855 30.735995,30.735995 0 0 1 -0.4594,3.03806 30.735995,30.735995 0 0 1 -0.76016,2.97656 30.735995,30.735995 0 0 1 -1.05317,2.88613 30.735995,30.735995 0 0 1 -1.33635,2.76624 30.735995,30.735995 0 0 1 -1.60611,2.61948 30.735995,30.735995 0 0 1 -1.85931,2.44584 30.735995,30.735995 0 0 1 -2.09445,2.24793 30.735995,30.735995 0 0 1 -2.30787,2.02778 30.735995,30.735995 0 0 1 -2.49907,1.78697 30.735995,30.735995 0 0 1 -2.66495,1.52859 30.735995,30.735995 0 0 1 -2.80448,1.25522 30.735995,30.735995 0 0 1 -2.91559,0.96842 30.735995,30.735995 0 0 1 -2.99775,0.67334 30.735995,30.735995 0 0 1 -3.04994,0.37 30.735995,30.735995 0 0 1 -2.17403,0.077 30.735995,30.735995 0 0 1 -3.06855,-0.15348 30.735995,30.735995 0 0 1 -3.03805,-0.4594 30.735995,30.735995 0 0 1 -2.976556,-0.76016 30.735995,30.735995 0 0 1 -2.886122,-1.05317 30.735995,30.735995 0 0 1 -2.766243,-1.33635 30.735995,30.735995 0 0 1 -2.619478,-1.6061 30.735995,30.735995 0 0 1 -2.445845,-1.85932 30.735995,30.735995 0 0 1 -2.247924,-2.09393 30.735995,30.735995 0 0 1 -2.027785,-2.30839 30.735995,30.735995 0 0 1 -1.786969,-2.49907 30.735995,30.735995 0 0 1 -1.528591,-2.66495 30.735995,30.735995 0 0 1 -1.25522,-2.80448 30.735995,30.735995 0 0 1 -0.968415,-2.91559 30.735995,30.735995 0 0 1 -0.672827,-2.99775 30.735995,30.735995 0 0 1 -0.37052,-3.04994 30.735995,30.735995 0 0 1 -0.077,-2.17403 30.735995,30.735995 0 0 1 0.153479,-3.06854 30.735995,30.735995 0 0 1 0.459404,-3.03754 30.735995,30.735995 0 0 1 0.760161,-2.97708 30.735995,30.735995 0 0 1 1.053164,-2.88613 30.735995,30.735995 0 0 1 1.336352,-2.76624 30.735995,30.735995 0 0 1 1.606105,-2.61948 30.735995,30.735995 0 0 1 1.859317,-2.44533 30.735995,30.735995 0 0 1 2.093929,-2.24844 30.735995,30.735995 0 0 1 2.308386,-2.02727 30.735995,30.735995 0 0 1 2.499074,-1.78748 30.735995,30.735995 0 0 1 2.664952,-1.52859 30.735995,30.735995 0 0 1 2.804484,-1.25471 30.735995,30.735995 0 0 1 2.915568,-0.96893 30.735995,30.735995 0 0 1 2.99775,-0.67283 30.735995,30.735995 0 0 1 3.04994,-0.37052 30.735995,30.735995 0 0 1 2.17403,-0.077 z"
+                            style="fill-opacity:1;stroke:none;stroke-width:0.2831727;stroke-opacity:1" />
+                        <path id="rect4998"
+                            d="m 103.38755,143.82326 v 24.00163 H 79.38643 v 4.9134 h 24.00112 v 24.00164 h 4.91391 v -24.00164 h 24.00164 v -4.9134 h -24.00164 v -24.00163 z"
+                            style="fill-opacity:1;stroke:none;stroke-width:0.18708862;stroke-opacity:1" />
+                    </g>
+                </svg>
+            </button>
+        </div>
+        <div class="description-area">
+
+        </div>
+    </template>
+    <template id="logged-in">
+        <div class="dropdown">
+            <button class="light-blue">
+                <span>Username</span>
+                <img class="user-photo" src="icons/ulad.png" />
+                <div class="dropdown-content">
+                </div>
+            </button>
+        </div>
+    </template>
+    <template id="photo-post">
         <div class="post-layout">
             <div class="hidden-scroll">
                 <div class="photo-zone">
-                    <div class="drop-zone">
-                        <form class="dragndrop">
-                            <p>Please, load the image or just drag it here:</p>
-                            <input type="file" id="fileExplorer" accept="image/*">
-                            <label class="file-upload-button" for="fileExplorer">Press to load</label>
-                        </form>
+                    <img/>
+                    <div class="text">
+                        <div class="horizontal-container">
+                            <div class="user-info">
+                                <span><img class="user-photo"></span>
+                                <div class="photo-info">
+                                    <span>  </span>
+                                    <span>  </span>
+                                </div>
+                            </div>
+                            <button class="like-btn"></button>
+                        </div>
+                        <hr />
+                        <div class="hashtags">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="hidden-scroll">
                 <div class="text-zone">
-                    <div class="description">
-                        <input type="text">
-                    </div>
-                    <div class="hashtags">
-                        <input type="text">
-                    </div>
+                    <div class="description"></div>
+                    <hr />
                 </div>
             </div>
         </div>
     </template>
+    <temlate id="not-logged-in">
+        <button class="light-blue">login</button>
+    </temlate>
     <div class="modal-overlay">
         <div class="close">&times</div>
     </div>
     <header class="light-blue shadow">
         <img class="logo"/>
-        <button class="light-blue">
-            <span class="button-text">Username</span>
-            <span><img class="user-photo"></span>
-        </button>
+        <div class="dropdown">
+            <button class="dropdown-btn light-blue">
+                <span>Username</span>
+                <img class="user-photo" src="icons/ulad.png" />
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
     </header>
     <div class="controls">
         <button class="round menu-btn light-blue">
@@ -87,6 +136,7 @@
     </footer>
     <script src="script.js"></script>
     <script src="PhotoPost.js"></script>
+    <script src="User.js"></script>
     <script src="AddPhotoModel.js"></script>
     <script src="AddPhotoView.js"></script>
     <script src="AddPhotoController.js"></script>

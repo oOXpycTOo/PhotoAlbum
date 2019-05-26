@@ -94,6 +94,26 @@ class PhotoPostsModel {
         return false;
     }
 
+    isLikedByUser(id, user) {
+        let photoPostIdx = this.photoPosts.findIndex(photoPost => photoPost.id === id);
+        return this.photoPosts[photoPostIdx].getLikedBy.includes(user)
+    }
+
+    toggleLike(id, user) {
+        let photoPostIdx = this.photoPosts.findIndex(photoPost => photoPost.id === id);
+        if(this.isLikedByUser(id, user)) {
+            let likeIndex = this.photoPosts[photoPostIdx].getLikedBy.indexOf(user);
+            this.photoPosts[photoPostIdx].getLikedBy.splice(likeIndex, 1);
+        } else {
+            this.photoPosts[photoPostIdx].getLikedBy.unshift(user);
+        }
+        localStorage.setItem('photoPosts', JSON.stringify(this.photoPosts));
+    }
+
+    save(photoPost) {
+        photoposts1
+    }
+
     _isMutableProperty(property) {
         return property !== 'id' && property !== 'author' && property !== 'createdAt';
     }

@@ -35,43 +35,40 @@ class PhotoPostsView {
 
     displayPhotoPost(id) {
         const photoPost = this.photoPostsModel.get(id);
-        this._displayModal();
-        let modalWindow = document.querySelector('.modal-window');
-        modalWindow.innerHTML +=
-        '<div class="post-layout">\
-            <div class="hidden-scroll">\
-                <div class="photo-zone">\
-                    <img src="' + photoPost.photoLink + '" />\
-                    <div class="text">\
-                        <div class="horizontal-container">\
-                            <div class="user-info">\
-                                <span><img src="' + photoPost.photoLink + '" class="user-photo"></span>\
-                                <div class="photo-info">\
-                                    <span>' + photoPost.author + '</span>\
-                                    <span>' + photoPost.creationDate + '</span>\
-                                </div>\
-                            </div>\
-                            <button class="like"><i class="fas fa-heart"></i></button>\
-                        </div>\
-                        <hr/>\
-                        <div class="hashtags">\
-                            ' + this._getHashtagsHTML(photoPost.hashtags) + '\
-                        </div>\
-                    </div>\
-                </div>\
-            </div>\
-            <div class="hidden-scroll">\
-                <div class="text-zone">\
-                    \
-                    <div class="description">\
-                        '+ photoPost.description + '\
-                    </div><hr/>\
-                </div>\
-            </div>\
-        </div>';
+        this._renderModal();
+        this._renderPhotoPostTemplate();
+        document.querySelector('.photo-zone img').src = photoPost.photoLink;
+        document.querySelector('.user-photo').src = photoPost.photoLink;
+        let userInfo = document.querySelectorAll('.photo-info span');
+        userInfo[0].innerHTML = photoPost.author;
+        userInfo[1].innerHTML = photoPost.creationDate;
+        document.querySelector('.hashtags').innerHTML += this._getHashtagsHTML(photoPost.hashtags);
+        document.querySelector('.description').innerHTML = photoPost.description;
+        this._renderLike(photoPost, 'Ulad');
+        let likeButton = document.querySelector('.like-btn');
+        likeButton.addEventListener('click', ()=>{
+            this.photoPostsModel.toggleLike(id, 'Ulad');
+            this._renderLike(photoPost, 'Ulad');
+        });
     }
 
-    _displayModal() {
+    _renderPhotoPostTemplate() {
+        let modalWindow = document.querySelector('.modal-window');
+        let photoPostTemplate = document.getElementById('photo-post');
+        modalWindow.appendChild(photoPostTemplate.content.cloneNode(true));
+    }
+
+    _renderLike(photoPost, user) {
+        let likeButton = document.querySelector('.like-btn');
+        if(photoPost.isLikedBy(user)) {
+            likeButton.classList.add('active');
+        } else {
+            likeButton.classList.remove('active');
+        }
+        likeButton.innerHTML = '<i class="fas fa-heart"></i>' + photoPost.likedByAmount;
+    }
+
+    _renderModal() {
         let modalWindow = document.getElementById('modal-window');
         this.body.classList.toggle('no-scroll');
         this.modal.classList.add('active');
